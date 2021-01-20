@@ -113,17 +113,30 @@ public class App
         names.add("Fredrik");
         names.add("Patrik");
         names.add("Amanda");
-        System.out.println(names);                                  //Print HashSet
-        ArrayList<String> weekDaysList = new ArrayList<>(names);    //Create ArrayList out of HashSet
-        System.out.println(weekDaysList);                           //Print ArrayList
-        weekDaysList.sort(null);                                 //Sort ArrayList, natural ordering comparator
-        System.out.println(weekDaysList);                           //Print sorted list
+        System.out.println(names);                               //Print HashSet
+        ArrayList<String> namesList = new ArrayList<>(names);    //Create ArrayList out of HashSet
+        System.out.println(namesList);                           //Print ArrayList
+        namesList.sort(null);                                 //Sort ArrayList, natural ordering comparator
+        System.out.println(namesList);                           //Print sorted list
     }
 
     public static void exercise8(){
         //According to the Internet, you can't. It is an unordered collection that does not
         //have random access methods, ie .get() an element at a given index. That does not
-        //exist in Set or child of Set class.
+        //exist in Set or child of Set class. Turns out, the Internet is wrong!
+        //If elements are of Set type (HashSet), you can use TreeSet (implements SortedSet)
+        //that automatically sort in natural order
+        Set<String> names = new HashSet<>();
+        names.add("Ola");
+        names.add("Ken");
+        names.add("Wilma");
+        names.add("Anna");
+        names.add("Fredrik");
+        names.add("Patrik");
+        names.add("Amanda");
+        System.out.println(names);                              //Print unsorted set
+        Set<String> sortedNames = new TreeSet<String>(names);   //Create TreeSet
+        System.out.println(sortedNames);                        //Print sorted set
     }
 
     public static void exercise9() {
